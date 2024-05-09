@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import { ImCross } from "react-icons/im";
 
 function UpdateOrderModal({ isOpen, onClose, order, onUpdate }) {
@@ -30,6 +31,10 @@ function UpdateOrderModal({ isOpen, onClose, order, onUpdate }) {
     updatedOrders.unshift(updatedOrder);
     console.log(updatedOrders)
     localStorage.setItem("orders", JSON.stringify(updatedOrders));
+    setTimeout(() => {
+        toast.success("updated")
+        onClose()
+    }, 1500);
   };
   
   if (!isOpen) return null;

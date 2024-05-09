@@ -139,10 +139,10 @@ function AdminDashboard() {
 </div>
 
 </div>
-<h1 className="text-[30px] text-white  font-thin w-full relative">Recent orders  <button className="text-xs flex justify-center items-center  absolute right-0 bottom-0 gap-2" onClick={()=>nav("/orders")}>Show more <FaSearch/></button></h1>
+<h1 className="text-[30px] text-white  font-thin w-full relative">Recent orders  <button className="text-xs flex justify-center items-center  absolute right-0 bottom-0 gap-2" onClick={()=>nav("/orders")}>Show more </button></h1>
 <Orders/>
     </div>:<div className="max-w-[70%]  w-[70%] p-px bg-gradient-to-b h-full  bg-opacity-10 flex-col flex gap-3 ">
-    <h1 className="text-[30px] text-white  font-thin w-full relative">Recent orders  <button className="text-xs flex justify-center items-center  absolute right-0 bottom-0 gap-2" onClick={()=>nav("/")}>Show less <FaSearch/></button></h1>
+    <h1 className="text-[30px] text-white  font-thin w-full relative">Recent orders  <button className="text-xs flex justify-center items-center  absolute right-0 bottom-0 gap-2" onClick={()=>nav("/")}>Show less</button></h1>
 
       <Orders/></div>
      }
