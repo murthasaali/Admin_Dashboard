@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
 import './App.css';
-
+import AdiminDashboard from './pages/AdiminDashboard';
+import dummyOrders from './Datas/OrderDetails';
 function App() {
+  // useEffect to store order details in local storage
+  useEffect(() => {
+    // Check if orders exist in local storage
+    const storedOrders = JSON.parse(localStorage.getItem('orders'));
+    if (!storedOrders) {
+      // If no orders exist in local storage, store the dummy orders
+      localStorage.setItem('orders', JSON.stringify(dummyOrders));
+    }else{
+      
+    }
+  }, []); // Run only once when the component mounts
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* <Route path="/" element={<LandingPage />} /> */}
+        <Route path="/" element={<AdiminDashboard />} />
+        <Route path="/orders" element={<AdiminDashboard />} />
+      </Routes>
+    </Router>
   );
 }
 

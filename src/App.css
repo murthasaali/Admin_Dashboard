@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+.border-gradient {
+  border: 2px solid transparent; /* Set border to transparent to avoid conflict */
+  border-radius: 30px; /* Set border radius */
+  overflow: hidden; /* Ensure the border doesn't overlap the gradient */
+}
+
+.border-gradient-purple {
+  border-image: linear-gradient(to top, #743ad5, #d53a9d) 1;
+}
