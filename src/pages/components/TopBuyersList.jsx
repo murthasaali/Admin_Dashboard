@@ -20,7 +20,7 @@ top Buyers                <button className='p-2'>
       <h1 className='text-[10px]  font-thin'>{item.name}</h1>
       </div>
       <div className='flex justify-between flex-col h-full'>
-        <h1 className='text-[10px]'>highest sales :<span className='text-red-400 text-[15px]'>{item.totalSale}</span></h1>
+        <h1 className='text-[10px]'>highest sales :<span className='text-red-400 text-[15px]'>{item.totalSale}.0 </span></h1>
         <h1 className='text-xs '>{item.totalTax}%</h1>
       </div>
 

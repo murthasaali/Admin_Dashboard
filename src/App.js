@@ -4,25 +4,28 @@ import { Toaster } from 'react-hot-toast';
 import './App.css';
 import AdiminDashboard from './pages/AdiminDashboard';
 import dummyOrders from './Datas/OrderDetails';
+import { useSelector } from 'react-redux';
+
 
 function App() {
-  // useEffect to store order details in local storage
+  // store the data when app runsss
   useEffect(() => {
-    // Check if orders exist in local storage
     const storedOrders = JSON.parse(localStorage.getItem('orders'));
     if (!storedOrders) {
-      // If no orders exist in local storage, store the dummy orders
       localStorage.setItem('orders', JSON.stringify(dummyOrders));
     }
   }, []);
+  const isAdminLoggedIn = useSelector(state => state.admin.isAdminLoggedIn);
+
 
   return (
     <>
+      {/* toast */}
       <Toaster /> 
       <Router>
         <Routes>
-          <Route path="/" element={<AdiminDashboard />} />
-          <Route path="/orders" element={<AdiminDashboard />} />
+          <Route path="/" element={<AdiminDashboard  isAdminLoggedIn={isAdminLoggedIn} />} />
+          <Route path="/orders" element={<AdiminDashboard isAdminLoggedIn={isAdminLoggedIn}/>} />
         </Routes>
       </Router>
     </>

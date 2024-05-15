@@ -1,54 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { CiInstagram, CiSearch } from "react-icons/ci";
 import { FaRegBell, FaSearch } from "react-icons/fa";
-import { CiMail } from "react-icons/ci";
-import { CiShoppingCart } from "react-icons/ci";
-import { CiClock2 } from "react-icons/ci";
-import { IoStatsChartOutline } from "react-icons/io5";
-import { CiFileOn } from "react-icons/ci";
-import { HiMiniUsers } from "react-icons/hi2";
-import { CiSettings } from "react-icons/ci";
-import { CiLogout } from "react-icons/ci";
 import Activities from "./components/Activities";
 import TopBuyersList from "./components/TopBuyersList";
 import dummyOrders  from '../Datas/OrderDetails'
 import { useLocation, useNavigate } from "react-router-dom";
 import Orders from "./components/Orders";
-function AdminDashboard() {
+import Sidebar from "./components/Sidebar";
+import LoginModal from "../Modals/LoginModal";
+function AdminDashboard({isAdminLoggedIn}) {
   console.log(dummyOrders)
   const nav =useNavigate()
   const location =useLocation()
+
   const isOrder=location.pathname.endsWith("/orders")
   return (
+    
     <div
       className="w-full h-screen flex justify-between gap-2 p-5"
       style={{ background: "#0B0D21 " }}
     >
+
       {/* first parent */}
-      <div className="max-w-md rounded-3xl p-px bg-gradient-to-b h-full w-[80px] bg-opacity-50 from-blue-300 to-pink-300 dark:from-blue-800 dark:to-purple-800 ">
-        <div className="rounded-[calc(1.5rem-1px)] text-iconcolor text-xl bg-white h-full dark:bg-gray-900 flex flex-col w-full p-2">
-          <div className="h-[50%] w-full bg-transparent  flex flex-col justify-evenly items-center">
-            <CiMail/>
-            <CiShoppingCart/>
-            <CiClock2/>
-            <IoStatsChartOutline/>
-            <FaSearch/>
-          </div>
-          <div className="h-px w-full bg-stone-200"></div>
-          <div className="h-[50%] w-full bg-transparent flex flex-col justify-between items-center py-8">
-            <div className="flex flex-col items-center gap-8">
+      <Sidebar/>
+      {!isAdminLoggedIn&&( <><LoginModal  /></>)}
 
-            <CiFileOn/>
-            <HiMiniUsers/>
-            <CiSettings/>
-            </div>
-
-            <CiLogout/>
-          </div>
-   
-
-        </div>
-      </div>
 
       {/* second parent */}
      {
@@ -88,7 +64,7 @@ function AdminDashboard() {
           </div>
         </div>
       </nav>
-     <h1 className="text-[40px] text-white  font-thin w-full relative">Popular  sales  <button className="text-xs flex justify-center items-center  absolute right-0 bottom-0 gap-2">Show more <FaSearch/></button></h1>
+     <h1 className="text-[40px] text-white  font-thin w-full relative">  <button className="text-xs flex justify-center items-center  absolute right-0 bottom-0 gap-2">Show more <FaSearch/></button></h1>
 {/* nft cards */}
 <div className="w-full h-fit  flex justify-between gap-3">
 <div className="w-[50%] h-52 bg-stone-50 rounded-3xl flex justify-start items-end p-4" style={{backgroundImage:"url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f04a2b153523503.6331a40cd438d.png')" ,backgroundPosition:"center",backgroundSize:"cover"}}> 
@@ -129,10 +105,10 @@ function AdminDashboard() {
 </div>
 
 </div>
-<h1 className="text-[30px] text-white  font-thin w-full relative">Recent orders  <button className="text-xs flex justify-center items-center  absolute right-0 bottom-0 gap-2" onClick={()=>nav("/orders")}>Show more </button></h1>
+<h1 className="text-[30px] text-white  font-thin w-full relative"><span className="px-4 py-2 bg-stone-50 bg-opacity-10 text-xl rounded-xl">recent  orders   </span>   <button className="text-xs flex justify-center items-center  absolute right-0 bottom-0 gap-2" onClick={()=>nav("/orders")}>Show more </button></h1>
 <Orders/>
     </div>:<div className="max-w-[70%]  w-[70%] p-px bg-gradient-to-b h-full  bg-opacity-10 flex-col flex gap-3 ">
-    <h1 className="text-[30px] text-white  font-thin w-full relative">Recent orders  <button className="text-xs flex justify-center items-center  absolute right-0 bottom-0 gap-2" onClick={()=>nav("/")}>Show less</button></h1>
+    <h1 className="text-[30px] text-white  font-thin w-full relative"><span className="px-4 py-2 bg-stone-50 bg-opacity-10 text-xl rounded-xl">recent  orders   </span>   <button className="text-xs flex justify-center items-center  absolute right-0 bottom-0 gap-2" onClick={()=>nav("/")}>Show less</button></h1>
 
       <Orders/></div>
      }

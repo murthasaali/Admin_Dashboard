@@ -33,7 +33,7 @@ export const topBuyers = [
     },
     {
       "id": 5,
-      "image": "https://avatars.mds.yandex.net/i?id=27d2a09941ec80c86e6d6eb5675a3e49-5221896-images-thumbs&ref=rim&n=33&w=480&h=320",
+      "image": "https://avatars.mds.yandex.net/i?id=6c358c5c4e006b1173761d9ca00ddd2d91f87336-10808983-images-thumbs&n=13",
       "name": "David Wilson",
       "totalSale": 3200,
       "totalTax": 250,

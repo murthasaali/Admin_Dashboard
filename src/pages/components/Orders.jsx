@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import dummyOrders from '../../Datas/OrderDetails';
 import UpdateOrderModal from '../../Modals/OrderUpdateModal';
 
 function Orders() {
@@ -11,7 +10,6 @@ function Orders() {
     setIsModalOpen(true);
   };
 
-  // Retrieve orders from local storage or use an empty array as default
   const orders = JSON.parse(localStorage.getItem("orders")) || [];
   console.log(orders);
 
@@ -21,9 +19,7 @@ function Orders() {
   };
 
   const handleUpdateOrder = (updatedOrder) => {
-    // Logic to update the order details
     console.log("Updated order:", updatedOrder);
-    // Implement your update logic here
   };
 
   return (
@@ -49,7 +45,6 @@ function Orders() {
           </div>
         </div>
       ))}
-      {/* <!-- Add more divs as needed --> */}
 
       {/* Modal */}
       <UpdateOrderModal isOpen={isModalOpen} onClose={closeModal} order={selectedOrder} onUpdate={handleUpdateOrder} />

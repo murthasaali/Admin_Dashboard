@@ -16,8 +16,7 @@ function UpdateOrderModal({ isOpen, onClose, order, onUpdate }) {
     const updatedOrder = { ...order, status };
     console.log("updated ordersssss:",updatedOrder)
     onUpdate(updatedOrder);
-    updateOrderInLocalStorage(updatedOrder); // Update the order in local storage
-    // onClose();
+    updateOrderInLocalStorage(updatedOrder); 
   };
 
   const totalAmount = (qty, price) => {
@@ -77,18 +76,18 @@ function UpdateOrderModal({ isOpen, onClose, order, onUpdate }) {
                 status === "Shipped" ? "bg-green-500" : "bg-red-500 "
               }  `}
             >
-              {status}{" "}
+              {status}
             </button>
             <div className="text-xs flex w-fit  py-1 rounded-full  items-end gap-2 text-white font-thin">
               <button className="text-xs border w-fit px-2 py-1 rounded-full  text-white font-thin">
-                ₹{" "}
+                ₹
                 <span className="text-xl font-bold text-stone-300">
                   {order.price}
                 </span>
               </button>
               <button className="text-xs border w-fit  py-1 h-fit rounded-full font-normal text-white  px-3 justify-center items-center flex gap-2">
-                {" "}
-                Qty:{" "}
+                
+                Qty:
                 <span className="text-xl font-bold text-stone-300">
                   {order.qty ? order.qty : "1"}
                 </span>
@@ -105,7 +104,7 @@ function UpdateOrderModal({ isOpen, onClose, order, onUpdate }) {
           </h1>
         </div>
         <div className="w-full h-fit  flex justify-between items-center">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="w-full flex justify-between items-center">
             <div className="mb-4">
               <label
                 htmlFor="status"
@@ -117,6 +116,7 @@ function UpdateOrderModal({ isOpen, onClose, order, onUpdate }) {
                 name="status"
                 id="status"
                 value={status}
+                // using selection of status update the state of statussss
                 onChange={(e) => setStatus(e.target.value)}
                 className="mt-1  block w-[120px] p-2 rounded-full after:bg-black shadow-sm font-light  border-gray-300   bg-customColor bg-opacity-50 text-white text-xs outline-none "
               >
@@ -129,7 +129,7 @@ function UpdateOrderModal({ isOpen, onClose, order, onUpdate }) {
             </div>
             <button
               type="submit"
-              className="inline-flex h-fit justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="inline-flex h-fit justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-lg text-white bg-stone-900 bg-opacity-80 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               Update
             </button>
