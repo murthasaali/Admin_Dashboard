@@ -29,8 +29,8 @@ const LoginModal = () => {
       <div className="bg-stone-100 bg-opacity-45 p-4 rounded-3xl shadow-md flex flex-col  " style={{backgroundImage:"url('')"}}>
         <h2 className="text-2xl font-semibold mb-4">Admin Login</h2>
         <form onSubmit={handleSubmit} className="flex flex-col w-[300px] gap-2 ">
-          <label htmlFor="username  "  className="text-xs"> Username:</label>
-          <input required className="w-[80%] h-8 rounded-xl  outline-none p-3 text-sm" type="email" id="username" name="email" />
+          <label htmlFor="email  "  className="text-xs"> email:</label>
+          <input required className="w-[80%] h-8 rounded-xl  outline-none p-3 text-sm" type="email" id="email" name="email" />
           <label htmlFor="password " className="text-xs mt-4">Password:</label>
           <input required className="w-[80%] h-8 rounded-xl  outline-none p-3 text-sm" type="password" id="password" name="password" />
           {/* <button type="submit">Login</button> */}
