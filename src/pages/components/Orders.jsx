@@ -32,7 +32,7 @@ function Orders({statusFilter}) {
           key={index}
         >
           <div
-            className="h-40 w-4h-40 relative rounded-xl justify-end  flex flex-col p-2"
+            className="h-40 w-4h-40 relative rounded-xl justify-end  flex flex-col p-2 "
             style={{ backgroundImage: `url(${item.productImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
             onClick={() => openModal(item)}
           >

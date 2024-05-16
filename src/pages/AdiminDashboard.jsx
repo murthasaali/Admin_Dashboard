@@ -154,7 +154,7 @@ function AdminDashboard({ isAdminLoggedIn }) {
               </div>
             </div>
           </div>
-          <div className="text-[30px] text-white  font-thin w-full relative flex gap-2">
+          <div className="text-[30px] text-white  font-thin w-full relative flex gap-2 items-end">
             <h1 className="px-4 py-2 bg-stone-50 bg-opacity-10 text-xl w-fit rounded-xl">
               recent orders{" "}
             </h1>
@@ -194,7 +194,7 @@ function AdminDashboard({ isAdminLoggedIn }) {
         </div>
       ) : (
         <div className="max-w-[70%]  w-[70%] p-px bg-gradient-to-b h-full  bg-opacity-10 flex-col flex gap-3 ">
-         <div className="text-[30px] text-white  font-thin w-full relative flex gap-2">
+         <div className="text-[30px] text-white  font-thin w-full relative flex gap-2 items-end">
             <h1 className="px-4 py-2 bg-stone-50 bg-opacity-10 text-xl w-fit rounded-xl">
               recent orders{" "}
             </h1>
