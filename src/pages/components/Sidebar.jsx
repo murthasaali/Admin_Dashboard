@@ -8,8 +8,12 @@ import { HiMiniUsers } from "react-icons/hi2";
 import { CiSettings } from "react-icons/ci";
 import { CiLogout } from "react-icons/ci";
 import { FaRegBell, FaSearch } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
+import { setAdminLoggedIn } from '../../Redux/features/AdminSlice';
+import toast from 'react-hot-toast';
 
 function Sidebar() {
+  const dispatch = useDispatch()
     
   return (
     <div className="max-w-md rounded-3xl p-px bg-gradient-to-b h-full w-[80px] bg-opacity-50 from-blue-300 to-pink-300 dark:from-blue-800 dark:to-purple-800 ">
@@ -30,7 +34,7 @@ function Sidebar() {
         <CiSettings/>
         </div>
 
-        <CiLogout />
+        <CiLogout title='logout' onClick={()=>{dispatch(setAdminLoggedIn(false));toast.error("admin logoutted")}}/>
       </div>
 
 
