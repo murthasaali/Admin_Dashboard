@@ -54,7 +54,7 @@ function UpdateOrderModal({ isOpen, onClose, order, onUpdate }) {
         </h2>
         <div className="flex w-fit">
           <div
-            className="h-40 w-48 relative rounded-xl justify-end  flex flex-col p-2"
+            className="h-40 w-48 relative rounded-xl justify-end  flex flex-col p-2 "
             style={{
               backgroundImage: `url(${order.productImage})`,
               backgroundSize: "cover",

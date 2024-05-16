@@ -13,7 +13,7 @@ const LoginModal = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    if (email === AdminCredentials.email && password === AdminCredentials.password) {
+    if (email === AdminCredentials.email && password === AdminCredentials.password && AdminCredentials.role==="admin") {
       console.log("Admin logged in successfully!");
       toast.success("admin loggined succussfully")
       dispatch(setAdminLoggedIn(true));
