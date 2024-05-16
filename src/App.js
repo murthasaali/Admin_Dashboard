@@ -11,7 +11,7 @@ function App() {
   // store the data when app runsss
   useEffect(() => {
     const storedOrders = JSON.parse(localStorage.getItem('orders'));
-    if (!storedOrders) {
+    if (storedOrders) {
       localStorage.setItem('orders', JSON.stringify(dummyOrders));
     }
   }, []);

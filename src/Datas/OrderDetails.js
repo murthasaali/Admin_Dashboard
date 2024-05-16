@@ -96,7 +96,7 @@ const dummyOrders = [
       orderDate: '2024-05-11',
       price: 170,
       status: 'Pending',
-      productImage: 'https://www.freepik.com/premium-ai-image/red-formal-male-shoes-red-background-photo-studio_92160826.htm#fromView=search&page=1&position=20&uuid=95d40b6c-8fad-497d-911d-9cc050c9ae9c',
+      productImage: 'https://ae04.alicdn.com/kf/Hfb72da8b8024415ba54fff695fe7f827k.jpg',
     },
     {
       qty:5,
