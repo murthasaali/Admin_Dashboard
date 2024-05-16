@@ -159,19 +159,27 @@ function AdminDashboard({ isAdminLoggedIn }) {
               recent orders{" "}
             </h1>
             <CustomButton
+              border={"border"}
               content={"all"}
+              textColor={"text-white"}
               handleButton={() => handleFilterChange("all")}
             />
             <CustomButton
+              border={"border"}
               content={"deliverd"}
+              textColor={"text-blue-200"}
               handleButton={() => handleFilterChange("Delivered")}
             />
             <CustomButton
+              border={"border"}
               content={"pending"}
+              textColor={"text-red-300"}
               handleButton={() => handleFilterChange("Pending")}
             />
             <CustomButton
+              border={"border"}
               content={"shipped"}
+              textColor={"text-green-500"}
               handleButton={() => handleFilterChange("Shipped")}
             />
 
@@ -191,19 +199,27 @@ function AdminDashboard({ isAdminLoggedIn }) {
               recent orders{" "}
             </h1>
             <CustomButton
+              border={"border"}
               content={"all"}
+              textColor={"text-white"}
               handleButton={() => handleFilterChange("all")}
             />
             <CustomButton
+              border={"border"}
               content={"deliverd"}
+              textColor={"text-blue-200"}
               handleButton={() => handleFilterChange("Delivered")}
             />
             <CustomButton
+              border={"border"}
               content={"pending"}
+              textColor={"text-red-300"}
               handleButton={() => handleFilterChange("Pending")}
             />
             <CustomButton
+              border={"border"}
               content={"shipped"}
+              textColor={"text-green-500"}
               handleButton={() => handleFilterChange("Shipped")}
             />
 
