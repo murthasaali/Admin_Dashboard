@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { ImCross } from "react-icons/im";
+import CustomButton from "../customcomponets/CustomButton";
 
 function UpdateOrderModal({ isOpen, onClose, order, onUpdate }) {
   const [status, setStatus] = useState("");
@@ -127,12 +128,13 @@ function UpdateOrderModal({ isOpen, onClose, order, onUpdate }) {
                 <option value="Delivered">Delivered</option>
               </select>
             </div>
-            <button
+            {/* <button
               type="submit"
               className="inline-flex h-fit justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-lg text-white bg-stone-900 bg-opacity-80 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               Update
-            </button>
+            </button> */}
+            <CustomButton  content={"update"} type={"submit"} height={"35px"}/>
           </form>
           <div className="flex justify-end">
            
