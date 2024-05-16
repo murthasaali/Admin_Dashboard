@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import UpdateOrderModal from '../../Modals/OrderUpdateModal';
 
-function Orders() {
+function Orders({statusFilter}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState(null);
 
@@ -12,6 +12,8 @@ function Orders() {
 
   const orders = JSON.parse(localStorage.getItem("orders")) || [];
   console.log(orders);
+  const filteredOrders = statusFilter === 'all' ? orders : orders.filter(order => order.status === statusFilter);
+
 
   const closeModal = () => {
     setSelectedOrder(null);
@@ -24,7 +26,7 @@ function Orders() {
 
   return (
     <div className="grid grid-cols-5 gap-5 h-full overflow-y-scroll overflow-x-hidden py-3">
-      {orders.map((item, index) => (
+      {filteredOrders.map((item, index) => (
         <div
           className="flex flex-col gap-2 hover:scale-105 transition-all duration-300 opacity-70 hover:opacity-90"
           key={index}

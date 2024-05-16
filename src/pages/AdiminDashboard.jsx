@@ -8,10 +8,16 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Orders from "./components/Orders";
 import Sidebar from "./components/Sidebar";
 import LoginModal from "../Modals/LoginModal";
+import CustomButton from "../customcomponets/CustomButton";
 function AdminDashboard({isAdminLoggedIn}) {
   console.log(dummyOrders)
   const nav =useNavigate()
   const location =useLocation()
+  const [statusFilter, setStatusFilter] = useState('all');
+
+  const handleFilterChange = (status) => {
+    setStatusFilter(status);
+  };
 
   const isOrder=location.pathname.endsWith("/orders")
   return (
@@ -105,12 +111,20 @@ function AdminDashboard({isAdminLoggedIn}) {
 </div>
 
 </div>
-<h1 className="text-[30px] text-white  font-thin w-full relative"><span className="px-4 py-2 bg-stone-50 bg-opacity-10 text-xl rounded-xl">recent  orders   </span>   <button className="text-xs flex justify-center items-center  absolute right-0 bottom-0 gap-2" onClick={()=>nav("/orders")}>Show more </button></h1>
-<Orders/>
+<div className="text-[30px] text-white  font-thin w-full relative flex gap-2">
+  <h1 className="px-4 py-2 bg-stone-50 bg-opacity-10 text-xl w-fit rounded-xl">recent  orders   </h1> 
+  <CustomButton content={"all"} handleButton={() => handleFilterChange('all')}/>
+  <CustomButton content={"deliverd"} handleButton={() => handleFilterChange('Delivered')}/>
+  <CustomButton content={"pending"} handleButton={() => handleFilterChange('Pending')}/>
+  <CustomButton content={"shipped"} handleButton={() => handleFilterChange('Shipped')}/>
+
+  
+    <button className="text-xs flex justify-center items-center  absolute right-0 bottom-0 gap-2" onClick={()=>nav("/orders")}>Show more </button></div>
+<Orders  statusFilter={statusFilter}/>
     </div>:<div className="max-w-[70%]  w-[70%] p-px bg-gradient-to-b h-full  bg-opacity-10 flex-col flex gap-3 ">
     <h1 className="text-[30px] text-white  font-thin w-full relative"><span className="px-4 py-2 bg-stone-50 bg-opacity-10 text-xl rounded-xl">recent  orders   </span>   <button className="text-xs flex justify-center items-center  absolute right-0 bottom-0 gap-2" onClick={()=>nav("/")}>Show less</button></h1>
 
-      <Orders/></div>
+      <Orders  statusFilter={statusFilter}/></div>
      }
       {/* third parent */}
       <div  className="max-w-[20%] rounded-3xl w-[35%] p-px bg-gradient-to-b h-full bg-opacity-50 from-blue-300 to-pink-300 dark:from-blue-800 dark:to-purple-800 ">
